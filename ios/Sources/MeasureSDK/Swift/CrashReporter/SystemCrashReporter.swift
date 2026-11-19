@@ -59,6 +59,8 @@ final class BaseSystemCrashReporter: SystemCrashReporter {
             CrashDataWriter.shared.writeCrashData(plan: plan, writer: writer)
         }
 
+        config.enableSwapCxaThrow = false
+
         do {
             try KSCrash.shared.install(with: config)
         } catch {
